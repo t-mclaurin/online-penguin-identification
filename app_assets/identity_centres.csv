@@ -1,0 +1,72 @@
+identity,centre_index,n_images_used_for_centre,rep_image_source_path,rep_image_path,centre_embedding_file
+Ani,0,1,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Ani/Ani1.jpg,app_assets/representative_images/Ani.jpg,app_assets/identity_centres.npy
+Beaker,1,19,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Beaker/2/IMG_3053.jpeg,app_assets/representative_images/Beaker.jpeg,app_assets/identity_centres.npy
+Beau,2,19,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Beau/2.jpg,app_assets/representative_images/Beau.jpg,app_assets/identity_centres.npy
+Bilby,3,5,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Bilby/1/Bilby2.jpg,app_assets/representative_images/Bilby.jpg,app_assets/identity_centres.npy
+Bob,4,18,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Bob/3/DSC_2467.jpeg,app_assets/representative_images/Bob.jpeg,app_assets/identity_centres.npy
+Bud,5,28,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Bud/1/Bud9.jpg,app_assets/representative_images/Bud.jpg,app_assets/identity_centres.npy
+Calypso,6,18,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Calypso/3/IMG_1564_box5.jpg,app_assets/representative_images/Calypso.jpg,app_assets/identity_centres.npy
+Chompy,7,23,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Chompy/IMGP0666.JPG,app_assets/representative_images/Chompy.jpg,app_assets/identity_centres.npy
+Coco,8,14,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Coco/Coco9.jpg,app_assets/representative_images/Coco.jpg,app_assets/identity_centres.npy
+Cooper,9,119,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Cooper/20/IMG_1431_box3.jpg,app_assets/representative_images/Cooper.jpg,app_assets/identity_centres.npy
+Courtney,10,24,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Courtney/2/IMGP0408.JPG,app_assets/representative_images/Courtney.jpg,app_assets/identity_centres.npy
+Cricket,11,9,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Cricket/2/Cricket7.jpg,app_assets/representative_images/Cricket.jpg,app_assets/identity_centres.npy
+Danny,12,30,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Danny/1/IMG_0797_box2.jpg,app_assets/representative_images/Danny.jpg,app_assets/identity_centres.npy
+Dragon,13,40,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Dragon/2/IMG_4410 copy.jpeg,app_assets/representative_images/Dragon.jpeg,app_assets/identity_centres.npy
+Echo,14,8,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Echo/1/Echo3.jpg,app_assets/representative_images/Echo.jpg,app_assets/identity_centres.npy
+Egg,15,17,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Egg/2/IMG_2953.jpeg,app_assets/representative_images/Egg.jpeg,app_assets/identity_centres.npy
+Ellis,16,17,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Ellis/Ellis4.jpg,app_assets/representative_images/Ellis.jpg,app_assets/identity_centres.npy
+Ernest,17,16,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Ernest/1/DSC_2529.jpeg,app_assets/representative_images/Ernest.jpeg,app_assets/identity_centres.npy
+Gonzo,18,47,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Gonzo/8/IMG_0897_box2.jpg,app_assets/representative_images/Gonzo.jpg,app_assets/identity_centres.npy
+Goose,19,6,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Goose/Goose1.jpg,app_assets/representative_images/Goose.jpg,app_assets/identity_centres.npy
+Gopher,20,3,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Gopher/1/DSC_2413.jpeg,app_assets/representative_images/Gopher.jpeg,app_assets/identity_centres.npy
+Greyjoy,21,18,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Greyjoy/Greyjoy4.jpg,app_assets/representative_images/Greyjoy.jpg,app_assets/identity_centres.npy
+Groot,22,10,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Groot/1/DSC_2560.jpeg,app_assets/representative_images/Groot.jpeg,app_assets/identity_centres.npy
+Hanbury,23,220,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Hanbury/3/IMG_3438.jpeg,app_assets/representative_images/Hanbury.jpeg,app_assets/identity_centres.npy
+Heathcliffe,24,59,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Heathcliffe/5/IMGP0400.JPG,app_assets/representative_images/Heathcliffe.jpg,app_assets/identity_centres.npy
+Jack,25,7,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Jack/1/Jack2.jpg,app_assets/representative_images/Jack.jpg,app_assets/identity_centres.npy
+Jaz,26,4,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Jaz/Jaz2.jpg,app_assets/representative_images/Jaz.jpg,app_assets/identity_centres.npy
+Karen,27,10,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Karen/3/Karen3.jpg,app_assets/representative_images/Karen.jpg,app_assets/identity_centres.npy
+Kermit,28,57,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Kermit/4/IMG_3282.jpeg,app_assets/representative_images/Kermit.jpeg,app_assets/identity_centres.npy
+Lannister,29,21,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Lannister/4/IMG_1616_box1.jpg,app_assets/representative_images/Lannister.jpg,app_assets/identity_centres.npy
+Lars,30,8,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Lars/2/Lars1.jpg,app_assets/representative_images/Lars.jpg,app_assets/identity_centres.npy
+Laura,31,20,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Laura/3/Laura1.jpg,app_assets/representative_images/Laura.jpg,app_assets/identity_centres.npy
+Lenny,32,24,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Lenny/6/Lenny 2.jpg,app_assets/representative_images/Lenny.jpg,app_assets/identity_centres.npy
+Lizzie,33,13,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Lizzie/1/IMG_3004.jpeg,app_assets/representative_images/Lizzie.jpeg,app_assets/identity_centres.npy
+Lucy,34,14,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Lucy/Lucy1.jpg,app_assets/representative_images/Lucy.jpg,app_assets/identity_centres.npy
+Luke,35,11,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Luke/1/Luke6.jpg,app_assets/representative_images/Luke.jpg,app_assets/identity_centres.npy
+McVitie,36,46,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/McVitie/1/DSC_2455.jpeg,app_assets/representative_images/McVitie.jpeg,app_assets/identity_centres.npy
+Medici,37,28,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Medici/2/IMG_1830_box1.jpg,app_assets/representative_images/Medici.jpg,app_assets/identity_centres.npy
+Millipede,38,4,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Millipede/1/Millipede2.jpg,app_assets/representative_images/Millipede.jpg,app_assets/identity_centres.npy
+Nicki,39,30,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Nicki/1/Nicki6.jpg,app_assets/representative_images/Nicki.jpg,app_assets/identity_centres.npy
+Nik_nak,40,29,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Nik_nak/3/IMG_2978.jpeg,app_assets/representative_images/Nik_nak.jpeg,app_assets/identity_centres.npy
+Olive,41,36,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Olive/Olive2.jpg,app_assets/representative_images/Olive.jpg,app_assets/identity_centres.npy
+Parky,42,67,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Parky/5/IMG_4378 copy.jpeg,app_assets/representative_images/Parky.jpeg,app_assets/identity_centres.npy
+Patrick,43,26,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Patrick/1/IMG_1059_box2.jpg,app_assets/representative_images/Patrick.jpg,app_assets/identity_centres.npy
+Peapod,44,19,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Peapod/2/IMG_2873_box5.jpg,app_assets/representative_images/Peapod.jpg,app_assets/identity_centres.npy
+Pepe,45,9,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Pepe/Pepe7.jpg,app_assets/representative_images/Pepe.jpg,app_assets/identity_centres.npy
+Petal,46,13,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Petal/1/Petal9.jpg,app_assets/representative_images/Petal.jpg,app_assets/identity_centres.npy
+Phineas,47,55,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Phineas/IMG_2285_box3.jpg,app_assets/representative_images/Phineas.jpg,app_assets/identity_centres.npy
+Piggy,48,10,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Piggy/Piggy10.jpg,app_assets/representative_images/Piggy.jpg,app_assets/identity_centres.npy
+Ping,49,20,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Ping/2/IMG_0841_box1.jpg,app_assets/representative_images/Ping.jpg,app_assets/identity_centres.npy
+Polka,50,8,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Polka/1/Polka3.jpg,app_assets/representative_images/Polka.jpg,app_assets/identity_centres.npy
+Pong,51,39,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Pong/5/IMGP0115.JPG,app_assets/representative_images/Pong.jpg,app_assets/identity_centres.npy
+Puddle,52,14,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Puddle/2/Puddle9.jpg,app_assets/representative_images/Puddle.jpg,app_assets/identity_centres.npy
+Rainbow,53,46,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Rainbow/3/IMGP0580.JPG,app_assets/representative_images/Rainbow.jpg,app_assets/identity_centres.npy
+Robin,54,24,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Robin/4/IMG_4365 copy.jpeg,app_assets/representative_images/Robin.jpeg,app_assets/identity_centres.npy
+Ron_burgundy,55,175,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Ron_burgundy/4/IMG_3159.jpeg,app_assets/representative_images/Ron_burgundy.jpeg,app_assets/identity_centres.npy
+Ronnie,56,5,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Ronnie/Ronnie2.jpg,app_assets/representative_images/Ronnie.jpg,app_assets/identity_centres.npy
+Sean,57,11,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Sean/Sean2.jpg,app_assets/representative_images/Sean.jpg,app_assets/identity_centres.npy
+Shiraz,58,6,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Shiraz/1/Shiraz3.jpg,app_assets/representative_images/Shiraz.jpg,app_assets/identity_centres.npy
+Skunk,59,2,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Skunk/1/Skunk2.jpg,app_assets/representative_images/Skunk.jpg,app_assets/identity_centres.npy
+Snorkel,60,28,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Snorkel/5/Snorkel3.jpg,app_assets/representative_images/Snorkel.jpg,app_assets/identity_centres.npy
+Spider,61,33,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Spider/2/IMG_4360 copy.jpeg,app_assets/representative_images/Spider.jpeg,app_assets/identity_centres.npy
+Stark,62,8,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Stark/2/Stark 2.jpg,app_assets/representative_images/Stark.jpg,app_assets/identity_centres.npy
+Stella,63,5,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Stella/2/Stella3.jpg,app_assets/representative_images/Stella.jpg,app_assets/identity_centres.npy
+Summer,64,14,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Summer/2/Summer4.jpg,app_assets/representative_images/Summer.jpg,app_assets/identity_centres.npy
+Swiftie,65,45,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Swiftie/5/IMG_2891.jpeg,app_assets/representative_images/Swiftie.jpeg,app_assets/identity_centres.npy
+Tang,66,63,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Tang/2/IMGP0478.JPG,app_assets/representative_images/Tang.jpg,app_assets/identity_centres.npy
+Therese,67,15,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Therese/Therese9.jpg,app_assets/representative_images/Therese.jpg,app_assets/identity_centres.npy
+Tiki,68,8,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Tiki/IMG_2185_box2.jpg,app_assets/representative_images/Tiki.jpg,app_assets/identity_centres.npy
+Toogie,69,9,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Toogie/2/IMG_4387 copy.jpeg,app_assets/representative_images/Toogie.jpeg,app_assets/identity_centres.npy
+Ziggy,70,39,/Users/theomclaurin/Desktop/humboldt_data/individuals_8_tagless/Ziggy/IMG_2961_box4.jpg,app_assets/representative_images/Ziggy.jpg,app_assets/identity_centres.npy
