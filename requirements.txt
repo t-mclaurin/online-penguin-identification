@@ -3,4 +3,3 @@ tensorflow
 numpy
 pandas
 Pillow
-keras
