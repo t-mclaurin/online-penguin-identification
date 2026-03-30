@@ -247,7 +247,7 @@ uploaded_file = st.file_uploader(
     width="stretch",
 )
 
-with st.expander("Or try an example image", expanded=False):
+with st.expander("Or try an example image", expanded=True):
     st.write("Click one of the penguins below to run a built-in example.")
 
     try:
