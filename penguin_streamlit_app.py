@@ -34,7 +34,7 @@ IMAGE_SIZE = 224
 EMBEDDING_DIM = 256
 DROPOUT_RATE = 0.1
 DISTANCE_THRESHOLD = 0.45
-TOP_K = 5
+TOP_K = 10
 
 
 # ============================================================
@@ -209,6 +209,11 @@ if uploaded_file is not None:
     winner_rep_image = str(winner.get("rep_image_path", ""))
     is_unknown = winner_distance > float(threshold)
 
+    top_match_labels = [
+        f"{row['identity']} (distance = {float(row['distance']):.4f})"
+        for _, row in ranked_df.iterrows()
+    ]
+
     with right_col:
         st.subheader("Prediction")
         if is_unknown:
@@ -220,10 +225,28 @@ if uploaded_file is not None:
             st.success(f"Predicted penguin: {winner_name}")
             st.write(f"Distance to nearest centre: {winner_distance:.4f}")
 
-        if path_exists(resolve_from_app_dir(winner_rep_image)):
-            st.image(str(resolve_from_app_dir(winner_rep_image)), caption=f"Representative image: {winner_name}", width="stretch")
+        selected_label = st.selectbox(
+            "Inspect one of the top matches",
+            options=top_match_labels,
+            index=0,
+        )
+        selected_index = top_match_labels.index(selected_label)
+        selected_match = ranked_df.iloc[selected_index]
+        selected_name = str(selected_match["identity"])
+        selected_distance = float(selected_match["distance"])
+        selected_rep_image = str(selected_match.get("rep_image_path", ""))
+
+        st.write(f"Selected match: **{selected_name}**")
+        st.write(f"Distance: {selected_distance:.4f}")
+
+        if path_exists(resolve_from_app_dir(selected_rep_image)):
+            st.image(
+                str(resolve_from_app_dir(selected_rep_image)),
+                caption=f"Representative image: {selected_name}",
+                width="stretch",
+            )
         else:
-            st.info("Representative image not available for the best match.")
+            st.info("Representative image not available for this match.")
 
     with st.expander("Top matches", expanded=True):
         display_df = ranked_df[["identity", "distance", "rep_image_path"]].copy()
