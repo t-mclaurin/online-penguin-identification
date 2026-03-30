@@ -28,19 +28,13 @@ APP_SUBTITLE = (
 # Point these at the outputs from prepare_app_assets.py
 APP_DIR = Path(__file__).resolve().parent
 CENTRES_CSV = APP_DIR / "app_assets" / "identity_centres.csv"
-DEFAULT_WEIGHTS = APP_DIR / "app_assets/model.weights.h5"
-weights_path = str(DEFAULT_WEIGHTS)
+DEFAULT_WEIGHTS = APP_DIR / "app_assets" / "model.weights.h5"
 
 IMAGE_SIZE = 224
 EMBEDDING_DIM = 256
 DROPOUT_RATE = 0.1
 DISTANCE_THRESHOLD = 0.45
 TOP_K = 5
-
-#Check 
-st.write("APP_DIR:", APP_DIR)
-st.write("Weights exists:", DEFAULT_WEIGHTS, Path(DEFAULT_WEIGHTS).exists())
-st.write("Centres CSV exists:", CENTRES_CSV, Path(CENTRES_CSV).exists())
 
 
 # ============================================================
@@ -164,15 +158,13 @@ st.set_page_config(page_title=APP_TITLE, layout="wide")
 st.title(APP_TITLE)
 st.write(APP_SUBTITLE)
 
-with st.sidebar:
-    st.header("Configuration")
-    weights_path = st.text_input("Weights (.h5)", value=str(DEFAULT_WEIGHTS))
-    centres_csv_path = st.text_input("Centres CSV", value=str(CENTRES_CSV))
-    image_size = st.number_input("Image size", min_value=32, max_value=2048, value=IMAGE_SIZE, step=32)
-    embedding_dim = st.number_input("Embedding dim", min_value=2, max_value=4096, value=EMBEDDING_DIM, step=1)
-    dropout_rate = st.number_input("Dropout rate", min_value=0.0, max_value=1.0, value=DROPOUT_RATE, step=0.05)
-    threshold = st.number_input("Unknown threshold", min_value=0.0, max_value=2.0, value=DISTANCE_THRESHOLD, step=0.01)
-    top_k = st.number_input("Top-K matches", min_value=1, max_value=20, value=TOP_K, step=1)
+weights_path = str(DEFAULT_WEIGHTS)
+centres_csv_path = str(CENTRES_CSV)
+image_size = IMAGE_SIZE
+embedding_dim = EMBEDDING_DIM
+dropout_rate = DROPOUT_RATE
+threshold = DISTANCE_THRESHOLD
+top_k = TOP_K
 
 try:
     model = load_model(weights_path, int(image_size), int(embedding_dim), float(dropout_rate))
