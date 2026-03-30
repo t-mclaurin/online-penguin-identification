@@ -1,0 +1,26 @@
+[
+  {
+    "id": "penguin_1",
+    "label": "Left penguin",
+    "crop_path": "example_crops/Courtney.png",
+    "bbox": { "x1": 0, "y1": 720, "x2": 440, "y2": 2700 }
+  },
+  {
+    "id": "penguin_2",
+    "label": "Second penguin",
+    "crop_path": "example_crops/Cricket.png",
+    "bbox": { "x1": 420, "y1": 630, "x2": 1379, "y2": 2720 }
+  },
+  {
+    "id": "penguin_3",
+    "label": "Third penguin",
+    "crop_path": "example_crops/Stark.png",
+    "bbox": { "x1": 1420, "y1": 630, "x2": 2400, "y2": 2660 }
+  },
+  {
+    "id": "penguin_4",
+    "label": "Right penguin",
+    "crop_path": "example_crops/Nik_Nak.png",
+    "bbox": { "x1": 2700, "y1": 540, "x2": 3450, "y2": 2000 }
+  }
+]
