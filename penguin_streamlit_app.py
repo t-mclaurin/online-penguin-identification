@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import io
 import os
+import json
 from pathlib import Path
 from typing import Tuple
 
@@ -9,8 +10,9 @@ os.environ.setdefault("TF_CPP_MIN_LOG_LEVEL", "2")
 
 import numpy as np
 import pandas as pd
-from PIL import Image
+from PIL import Image, ImageDraw
 import streamlit as st
+from streamlit_image_coordinates import streamlit_image_coordinates
 import tensorflow as tf
 
 from model import build_embedding_model
@@ -29,6 +31,8 @@ APP_SUBTITLE = (
 APP_DIR = Path(__file__).resolve().parent
 CENTRES_CSV = APP_DIR / "app_assets" / "identity_centres.csv"
 DEFAULT_WEIGHTS = APP_DIR / "app_assets" / "model.weights.h5"
+EXAMPLE_IMAGE = APP_DIR / "app_assets" / "example_data" / "example_image.jpeg"
+EXAMPLE_META = APP_DIR / "app_assets" / "example_data" / "example_penguins.json"
 
 IMAGE_SIZE = 224
 EMBEDDING_DIM = 256
@@ -49,6 +53,68 @@ def resolve_from_app_dir(path_str: str | Path) -> Path:
     if p.is_absolute():
         return p
     return (APP_DIR / p).resolve()
+
+def resolve_from_example_dir(path_str: str | Path) -> Path:
+    p = Path(path_str)
+    if p.is_absolute():
+        return p
+    return (EXAMPLE_META.parent / p).resolve()
+
+@st.cache_data
+def load_example_penguins():
+    with open(EXAMPLE_META, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def get_clicked_penguin(click_x: int, click_y: int, penguins: list[dict]):
+    for penguin in penguins:
+        box = penguin["bbox"]
+        if box["x1"] <= click_x <= box["x2"] and box["y1"] <= click_y <= box["y2"]:
+            return penguin
+    return None
+
+
+def draw_selected_box(image_path: str | Path, selected_penguin: dict | None = None) -> Image.Image:
+    image = Image.open(image_path).convert("RGB")
+    if selected_penguin is not None:
+        draw = ImageDraw.Draw(image)
+        box = selected_penguin["bbox"]
+        draw.rectangle(
+            [box["x1"], box["y1"], box["x2"], box["y2"]],
+            outline="red",
+            width=6,
+        )
+    return image
+
+def resize_image_and_boxes(
+    image: Image.Image,
+    penguins: list[dict],
+    target_width: int,
+) -> tuple[Image.Image, list[dict]]:
+    original_w, original_h = image.size
+
+    if original_w <= target_width:
+        return image, penguins
+
+    scale = target_width / original_w
+    new_w = target_width
+    new_h = int(original_h * scale)
+
+    resized_image = image.resize((new_w, new_h))
+
+    scaled_penguins = []
+    for penguin in penguins:
+        scaled_penguin = dict(penguin)
+        bbox = penguin["bbox"]
+        scaled_penguin["bbox"] = {
+            "x1": int(bbox["x1"] * scale),
+            "y1": int(bbox["y1"] * scale),
+            "x2": int(bbox["x2"] * scale),
+            "y2": int(bbox["y2"] * scale),
+        }
+        scaled_penguins.append(scaled_penguin)
+
+    return resized_image, scaled_penguins
 
 
 # ============================================================
@@ -176,26 +242,85 @@ except Exception as e:
 st.caption(f"Loaded {len(centres_df)} identity centres.")
 
 uploaded_file = st.file_uploader(
-    "Upload a penguin image",
+    "Upload your own penguin image",
     type=["jpg", "jpeg", "png"],
     width="stretch",
 )
 
-if uploaded_file is not None:
-    try:
-        uploaded_image = Image.open(io.BytesIO(uploaded_file.getvalue())).convert("RGB")
-    except Exception as e:
-        st.error(f"Could not read uploaded image: {e}")
-        st.stop()
+with st.expander("Or try an example image", expanded=False):
+    st.write("Click one of the penguins below to run a built-in example.")
 
+    try:
+        example_penguins = load_example_penguins()
+        current_selected = st.session_state.get("selected_example_penguin")
+
+        # Draw the currently selected box on the single displayed image
+        boxed_image = draw_selected_box(EXAMPLE_IMAGE, current_selected)
+        display_image, scaled_example_penguins = resize_image_and_boxes(
+            boxed_image,
+            example_penguins,
+            target_width=700,
+        )
+
+        click_value = streamlit_image_coordinates(
+            display_image,
+            key="penguin_example_selector",
+        )
+
+        if click_value is not None:
+            clicked_penguin = get_clicked_penguin(
+                click_value["x"],
+                click_value["y"],
+                scaled_example_penguins,
+            )
+
+            if clicked_penguin is not None:
+                selected_example_penguin = next(
+                    p for p in example_penguins if p["id"] == clicked_penguin["id"]
+                )
+
+                current_id = current_selected["id"] if current_selected is not None else None
+                new_id = selected_example_penguin["id"]
+
+                if new_id != current_id:
+                    st.session_state["selected_example_penguin"] = selected_example_penguin
+                    st.rerun()
+
+        selected_example_penguin = st.session_state.get("selected_example_penguin")
+
+        if selected_example_penguin is not None:
+            st.caption(f"Selected example: {selected_example_penguin['label']}")
+
+    except Exception as e:
+        st.warning(f"Example selector unavailable: {e}")
+        selected_example_penguin = None
+
+selected_input_label = None
+selected_input_image = None
+
+if uploaded_file is not None:
+    selected_input_image = Image.open(io.BytesIO(uploaded_file.getvalue())).convert("RGB")
+    selected_input_label = "Uploaded image"
+elif st.session_state.get("selected_example_penguin") is not None:
+    selected_example_penguin = st.session_state["selected_example_penguin"]
+    example_crop_path = resolve_from_example_dir(selected_example_penguin["crop_path"])
+    selected_input_image = Image.open(example_crop_path).convert("RGB")
+    selected_input_label = selected_example_penguin.get("label", "Example image")
+
+
+if selected_input_image is not None:
     left_col, right_col = st.columns(2)
 
     with left_col:
-        st.subheader("Uploaded image")
-        st.image(uploaded_image, width="stretch")
+        st.subheader(selected_input_label)
+        st.image(selected_input_image, width="stretch")
 
     with st.spinner("Embedding image and comparing to known identities..."):
-        query_embedding = embed_uploaded_image(model, uploaded_image, image_size=int(image_size))
+        query_embedding = embed_uploaded_image(
+            model,
+            selected_input_image,
+            image_size=int(image_size),
+        )
         ranked_df, all_distances = rank_identities(
             query_embedding=query_embedding,
             centres_df=centres_df,
@@ -206,7 +331,6 @@ if uploaded_file is not None:
     winner = ranked_df.iloc[0]
     winner_name = str(winner["identity"])
     winner_distance = float(winner["distance"])
-    winner_rep_image = str(winner.get("rep_image_path", ""))
     is_unknown = winner_distance > float(threshold)
 
     top_match_labels = [
@@ -253,10 +377,16 @@ if uploaded_file is not None:
         st.dataframe(display_df, width="stretch", hide_index=True)
 
     with st.expander("Debug details"):
-        st.write("Uploaded file name:", uploaded_file.name)
+        if uploaded_file is not None:
+            st.write("Uploaded file name:", uploaded_file.name)
+        elif st.session_state.get("selected_example_penguin") is not None:
+            st.write(
+                "Selected example id:",
+                st.session_state["selected_example_penguin"].get("id"),
+            )
         st.write("Query embedding shape:", query_embedding.shape)
         st.write("Min distance:", float(np.min(all_distances)))
         st.write("Max distance:", float(np.max(all_distances)))
 
 else:
-    st.info("Upload a penguin image to run identity matching.")
+    st.info("Upload a penguin image or click an example penguin to run identity matching.")
