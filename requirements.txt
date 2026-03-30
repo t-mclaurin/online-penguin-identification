@@ -1,4 +1,5 @@
 streamlit
+streamlit-image-coordinates
 tensorflow
 numpy
 pandas
