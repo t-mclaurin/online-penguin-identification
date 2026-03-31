@@ -30,7 +30,6 @@ APP_SUBTITLE = (
 # Point these at the outputs from prepare_app_assets.py
 APP_DIR = Path(__file__).resolve().parent
 CENTRES_CSV = APP_DIR / "app_assets" / "identity_centres.csv"
-# DEFAULT_WEIGHTS = "/Users/theomclaurin/pie-for-penguins/fine_tune_run_7/checkpoints/best_example_tuned.weights.h5"
 DEFAULT_WEIGHTS = APP_DIR / "app_assets" / "best.weights.h5"
 EXAMPLE_IMAGE = APP_DIR / "app_assets" / "example_data" / "example_image.jpeg"
 EXAMPLE_META = APP_DIR / "app_assets" / "example_data" / "example_penguins.json"
