@@ -25,10 +25,16 @@ from model import build_embedding_model
 # Config
 # ============================================================
 APP_TITLE = "Penguin Identifier Demo"
+
 APP_SUBTITLE = (
     "Upload an image of a Humboldt Penguin from London Zoo. The app embeds it, compares it to precomputed "
-    "identity centres, and returns the closest matches from an index of 71 known penguins."
-    "Humboldt Penguins have unique spot patterns on their fronts that humans and this model can use to tell them apart."
+    "identity centres, and returns the closest matches from an index of 71 known penguins. "
+    "Humboldt Penguins have unique spot patterns on their fronts that humans and this model can use to tell them apart. "
+    "This work was created by me, Theo McLaurin (theomclaurin2@gmail.com), starting as a Master's Research Project at the Zoological Society of London.\n\n"
+    "The (archived) codebase of the research project is available at "
+    "https://github.com/t-mclaurin/individual-penguin-identification. \n\n"
+    "The codebase of this streamlit app is available at "
+    "https://github.com/t-mclaurin/online-penguin-identification."
 )
 
 APP_DIR = Path(__file__).resolve().parent
@@ -655,7 +661,7 @@ if selected_input_image is not None:
         else:
             st.info("Representative image not available for this match.")
 
-        st.markdown("Not your penguin? Compare to the next closest match:")
+        st.markdown("Compare the penguin's spots to check if you've got a match. Not your penguin? Compare to the next closest match:")
         nav_left, nav_mid, nav_right = st.columns([1, 3, 1])
         with nav_left:
             if st.button("←", use_container_width=True, disabled=selected_rank <= 1, key=f"prev_rank_{sample_signature}"):
